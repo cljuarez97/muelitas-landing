@@ -1,0 +1,77 @@
+---
+import '@fontsource-variable/bricolage-grotesque/wght.css';
+import '@fontsource-variable/plus-jakarta-sans/wght.css';
+import '../styles/global.css';
+import Tooth from '../components/Tooth.astro';
+import WhatsApp from '../components/WhatsApp.astro';
+import { clinic, nav } from '../data/content';
+import { href, whatsappUrl } from '../lib/url';
+
+interface Props { title: string; description: string; jsonLd?: string; noindex?: boolean }
+const { title, description, jsonLd, noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const image = new URL(href('/og.png'), Astro.site);
+const wa = whatsappUrl(clinic.phoneE164, clinic.message);
+const csp = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'";
+---
+<!doctype html>
+<html lang="es-GT">
+  <head>
+    <meta charset="utf-8" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="theme-color" content="#0b3f49" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_GT" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={clinic.name} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href={href('/favicon.svg')} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={href('/apple-touch-icon.png')} />
+    <link rel="manifest" href={href('/manifest.webmanifest')} />
+    {jsonLd && <script is:inline type="application/ld+json" set:html={jsonLd} />}
+  </head>
+  <body>
+    <a class="skip" href="#contenido">Saltar al contenido</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href={href('/')} aria-label={`${clinic.name}, inicio`}>
+          <Tooth /><span><strong>{clinic.brand}</strong><small>{clinic.brandSub}</small></span>
+        </a>
+        <nav class="top-nav" aria-label="Principal">
+          {nav.map((n) => <a href={href(`/#${n.id}`)} class:list={{ btn: n.id === 'cita', 'btn-primary': n.id === 'cita' }}>{n.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="contenido" tabindex="-1"><slot /></main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <p class="brand brand-light"><Tooth /><span><strong>{clinic.brand}</strong><small>{clinic.brandSub}</small></span></p>
+          <p>Atención con cita previa, Guatemala.</p>
+        </div>
+        <address>
+          <a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a>
+          <a href={`mailto:${clinic.email}`}>{clinic.email}</a>
+        </address>
+        <nav aria-label="Pie de página">
+          {nav.map((n) => <a href={href(`/#${n.id}`)}>{n.label}</a>)}
+          <a href={href('/privacidad/')}>Aviso de privacidad</a>
+        </nav>
+      </div>
+      <p class="wrap legal">© {new Date().getFullYear()} {clinic.name}. La información de este sitio es general y no sustituye una consulta.</p>
+    </footer>
+    <a class="fab" href={wa} target="_blank" rel="noopener" aria-label="Escribir por WhatsApp (se abre en otra pestaña)"><WhatsApp /></a>
+    <nav class="bottom-nav" aria-label="Accesos rápidos">
+      {nav.map((n) => <a href={href(`/#${n.id}`)}>{n.short ?? n.label}</a>)}
+      <a href={wa} target="_blank" rel="noopener">WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+    </nav>
+  </body>
+</html>
