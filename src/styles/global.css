@@ -136,7 +136,7 @@ summary:hover strong, .faq summary:hover { text-decoration: underline; text-unde
 .site-footer { padding: 3.5rem 0 9rem; background: var(--petrol-deep); color: var(--mint); }
 .footer-grid { display: grid; gap: 2rem; }
 .footer-grid > div > p + p { margin-top: 0.75rem; }
-.site-footer address, .site-footer nav { display: grid; justify-items: start; font-style: normal; }
+.site-footer address, .site-footer nav { display: grid; justify-items: start; align-content: start; font-style: normal; }
 .site-footer a { display: inline-flex; align-items: center; min-height: 2.75rem; overflow-wrap: anywhere; }
 .legal { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #2b5963; font-size: 0.875rem; }
 
