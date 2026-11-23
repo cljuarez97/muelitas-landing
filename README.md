@@ -1,6 +1,6 @@
 # muelitas-landing
 
-Landing page de la Clínica Dentista Dr. Muelitas Axpuaca: https://cljuarez97.github.io/muelitas-landing/
+Landing page de Dental Kaizen, clínica dentista del Dr. Muelitas Axpuaca: https://cljuarez97.github.io/muelitas-landing/
 
 Astro 7 estático, CSS propio y tipografías autohospedadas. Misma estructura que `alaria-landing`, con identidad propia.
 

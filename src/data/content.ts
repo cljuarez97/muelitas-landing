@@ -2,17 +2,17 @@
 // dirección, horario, colegiado, fotos reales y redes sociales. Ver README.
 
 export const clinic = {
-  name: 'Clínica Dentista Dr. Muelitas Axpuaca',
-  brand: 'Dr. Muelitas',
-  brandSub: 'Axpuaca · Clínica dentista',
+  name: 'Dental Kaizen',
+  brand: 'Dental Kaizen',
+  brandSub: 'Clínica dentista',
   tagline: 'Sonrisas bien cuidadas',
-  title: 'Clínica dentista en Guatemala · Dr. Muelitas Axpuaca',
+  title: 'Clínica dentista en Guatemala · Dental Kaizen',
   description:
-    'Clínica dentista del Dr. Muelitas Axpuaca en Guatemala: limpieza, resinas, endodoncia, exodoncia, coronas e implantes. Solicita tu cita por WhatsApp.',
+    'Dental Kaizen, clínica dentista en Guatemala con el Dr. Muelitas Axpuaca: limpieza, resinas, endodoncia, exodoncia y coronas. Pide tu cita por WhatsApp.',
   phone: '+502 3724 5564',
   phoneE164: '+50237245564',
   email: 'rominchote@gmail.com',
-  message: 'Hola, quisiera solicitar una cita en la Clínica Dentista del Dr. Muelitas Axpuaca.',
+  message: 'Hola, quisiera solicitar una cita en Dental Kaizen.',
 };
 
 export const nav = [
