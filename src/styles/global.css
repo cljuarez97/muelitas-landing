@@ -133,14 +133,18 @@ summary:hover strong, .faq summary:hover { text-decoration: underline; text-unde
 .form :is(input, select, textarea) { width: 100%; min-height: 3rem; padding: 0.625rem 0.875rem; border: 1px solid #64828a; border-radius: 0.5rem; background: var(--white); color: inherit; font: 400 1rem/1.4 var(--body); }
 .form-status:empty { display: none; }
 
-.site-footer { padding: 3.5rem 0 7rem; background: var(--petrol-deep); color: var(--mint); }
+.site-footer { padding: 3.5rem 0 9rem; background: var(--petrol-deep); color: var(--mint); }
 .footer-grid { display: grid; gap: 2rem; }
 .footer-grid > div > p + p { margin-top: 0.75rem; }
 .site-footer address, .site-footer nav { display: grid; justify-items: start; font-style: normal; }
 .site-footer a { display: inline-flex; align-items: center; min-height: 2.75rem; overflow-wrap: anywhere; }
 .legal { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #2b5963; font-size: 0.875rem; }
 
-.fab { display: none; position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 20; place-items: center; width: 3.75rem; height: 3.75rem; border-radius: 50%; background: var(--petrol); color: var(--white); border: 2px solid var(--paper); }
+.credit { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.25rem; padding-right: 4.5rem; font-size: 0.875rem; }
+.credit img { width: 2.5rem; height: 2.5rem; object-fit: contain; }
+
+/* En móvil queda por encima de la barra inferior. */
+.fab { display: grid; position: fixed; right: 1rem; bottom: calc(4.5rem + env(safe-area-inset-bottom)); z-index: 20; place-items: center; width: 3.75rem; height: 3.75rem; border-radius: 50%; background: var(--petrol); color: var(--white); border: 2px solid var(--paper); }
 .fab .icon { width: 1.75rem; height: 1.75rem; }
 .bottom-nav { position: fixed; inset: auto 0 0; z-index: 20; display: grid; grid-template-columns: repeat(5, auto); padding-bottom: env(safe-area-inset-bottom); background: var(--white); border-top: 1px solid var(--line); }
 .bottom-nav a { display: grid; place-items: center; min-height: 3.5rem; padding-inline: 0.125rem; font-size: 0.75rem; font-weight: 700; text-decoration: none; }
@@ -157,7 +161,7 @@ summary:hover strong, .faq summary:hover { text-decoration: underline; text-unde
 @media (min-width: 64rem) {
   .top-nav { display: flex; }
   .bottom-nav { display: none; }
-  .fab { display: grid; }
+  .fab { right: 1.5rem; bottom: 1.5rem; }
   .site-footer { padding-bottom: 3rem; }
   .hero::before { inset: 2.5rem 0 0 auto; width: 34%; height: auto; border-top-left-radius: 14rem; }
   .hero-grid { grid-template-columns: 7fr 5fr; gap: 3.5rem; }
