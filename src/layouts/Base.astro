@@ -4,7 +4,7 @@ import '@fontsource-variable/plus-jakarta-sans/wght.css';
 import '../styles/global.css';
 import Tooth from '../components/Tooth.astro';
 import WhatsApp from '../components/WhatsApp.astro';
-import { clinic, nav } from '../data/content';
+import { clinic, nav, visit } from '../data/content';
 import { href, whatsappUrl } from '../lib/url';
 
 interface Props { title: string; description: string; jsonLd?: string; noindex?: boolean }
@@ -56,9 +56,10 @@ const csp = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 's
       <div class="wrap footer-grid">
         <div>
           <p class="brand brand-light"><Tooth /><span><strong>{clinic.brand}</strong><small>{clinic.brandSub}</small></span></p>
-          <p>{clinic.tagline}.<br />Atención con cita previa en Guatemala.</p>
+          <p>{clinic.tagline}.<br />Lunes a sábado con cita previa.</p>
         </div>
         <address>
+          <span>{visit.address.map((line) => <>{line}<br /></>)}</span>
           <a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a>
           <a href={`mailto:${clinic.email}`}>{clinic.email}</a>
         </address>

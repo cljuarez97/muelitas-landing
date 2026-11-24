@@ -8,7 +8,7 @@ export const clinic = {
   tagline: 'Tu mejor sonrisa empieza aquí',
   title: 'Clínica dentista en Guatemala · Dental Kaizen',
   description:
-    'Cuida tu sonrisa en Dental Kaizen, clínica dentista en Guatemala con el Dr. Muelitas Axpuaca. Presupuesto claro y citas por WhatsApp.',
+    'Cuida tu sonrisa en Dental Kaizen, clínica dentista en zona 10 de Mixco con el Dr. Muelitas Axpuaca. Presupuesto claro y citas por WhatsApp.',
   phone: '+502 3724 5564',
   phoneE164: '+50237245564',
   email: 'rominchote@gmail.com',
@@ -28,18 +28,23 @@ export const visit: {
   intro: string;
   address: string[];
   addressPending: string;
+  geo: { latitude: number; longitude: number };
   mapsUrl: string;
   hours: { days: string; time: string }[];
   hoursPending: string;
+  hoursNote: string;
   askMessage: string;
   tips: { title: string; text: string }[];
 } = {
-  intro: 'Queremos recibirte sin prisas. Agenda tu cita y confirma tu horario antes de venir.',
-  address: [],
+  intro: 'Te esperamos con cita previa en La Comunidad, zona 10 de Mixco. Confirma tu horario antes de venir.',
+  address: ['24 calle 3-95, La Comunidad', 'Zona 10 de Mixco, Guatemala'],
   addressPending: 'Te compartimos la ubicación exacta por WhatsApp',
-  mapsUrl: '',
-  hours: [],
+  // 14°37'10.0"N 90°35'00.9"W
+  geo: { latitude: 14.619444, longitude: -90.583583 },
+  mapsUrl: 'https://www.google.com/maps/dir/?api=1&destination=14.619444%2C-90.583583',
+  hours: [{ days: 'Lunes a sábado', time: 'Con cita previa' }],
   hoursPending: 'Atendemos con cita previa. Escríbenos y te contamos qué horarios hay disponibles.',
+  hoursNote: 'Escríbenos y te contamos qué horas hay disponibles.',
   askMessage: '¡Hola! ¿Me comparten la dirección y el horario de Dental Kaizen?',
   tips: [
     { title: 'Confirma tu cita', text: 'Revisa el día y la hora que acordamos. Si no puedes venir, avísanos por WhatsApp.' },
@@ -77,6 +82,7 @@ export const promises = [
 
 export const faq = [
   { q: '¿Cómo solicito mi cita?', a: 'Es muy fácil. Llena el formulario o escríbenos por WhatsApp al +502 3724 5564. Tu cita queda lista cuando te confirmemos el día y la hora.' },
+  { q: '¿Dónde están y qué días atienden?', a: 'Estamos en 24 calle 3-95, La Comunidad, zona 10 de Mixco. Atendemos de lunes a sábado con cita previa.' },
   { q: '¿Cuánto cuesta un tratamiento?', a: 'Cada sonrisa es distinta. Después de tu valoración recibes un presupuesto con el precio de cada tratamiento, para que decidas con tranquilidad.' },
   { q: '¿Me va a doler?', a: 'Cada persona lo vive de manera diferente y existen opciones de anestesia local. Si sientes nervios, cuéntanos. Iremos paso a paso y a tu ritmo.' },
   { q: '¿Cada cuánto debo visitar al dentista?', a: 'Depende del estado de tus dientes y encías. En tu consulta acordamos la frecuencia ideal para ti.' },

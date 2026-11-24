@@ -7,7 +7,7 @@ import { href, whatsappUrl } from '../lib/url';
 
 const ask = whatsappUrl(clinic.phoneE164, visit.askMessage);
 ---
-<Base title="Visítanos · Dental Kaizen" description="Visita Dental Kaizen con cita previa en Guatemala. Pide la dirección y el horario por WhatsApp o llama al +502 3724 5564.">
+<Base title="Visítanos · Dental Kaizen" description="Dental Kaizen te espera en 24 calle 3-95, La Comunidad, zona 10 de Mixco. De lunes a sábado con cita previa. Tel. +502 3724 5564.">
   <section class="visit">
     <div class="wrap">
       <div class="steps-head">
@@ -27,6 +27,7 @@ const ask = whatsappUrl(clinic.phoneE164, visit.askMessage);
           {visit.hours.length > 0
             ? <dl class="visit-hours">{visit.hours.map((h) => <div><dt>{h.days}</dt><dd>{h.time}</dd></div>)}</dl>
             : <p>{visit.hoursPending}</p>}
+          {visit.hours.length > 0 && <p>{visit.hoursNote}</p>}
           <h2>Contacto</h2>
           <ul class="contact" role="list">
             <li><a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a></li>

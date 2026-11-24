@@ -16,14 +16,14 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
   <section class="hero" id="inicio">
     <div class="wrap hero-grid">
       <div>
-        <p class="eyebrow">Clínica dentista · Guatemala</p>
+        <p class="eyebrow">Clínica dentista · Zona 10 de Mixco</p>
         <h1>Sonríe con <em>confianza</em></h1>
         <p class="lead">En Dental Kaizen, el Dr. Muelitas Axpuaca cuida cada detalle de tu sonrisa. Conoce tus opciones, recibe un presupuesto claro y decide con tranquilidad.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#cita">Quiero mi cita</a>
           <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener"><WhatsApp />Escribir por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
         </div>
-        <p class="hero-note">Atención con cita previa · <a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a></p>
+        <p class="hero-note">De lunes a sábado con cita previa · <a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a></p>
       </div>
       <figure class="hero-figure">
         <div class="arch"><HeroArt /></div>
@@ -103,7 +103,7 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
           <li><a href={`tel:${clinic.phoneE164}`}>Llamar al {clinic.phone}</a></li>
           <li><a href={`mailto:${clinic.email}`}>{clinic.email}</a></li>
         </ul>
-        <p>Al responderte confirmamos la dirección y el horario disponible.</p>
+        <p>Estamos en La Comunidad, zona 10 de Mixco, y atendemos de lunes a sábado. <a href={href('/visitanos/')}>Cómo llegar</a></p>
       </div>
       <noscript><p>Para solicitar tu cita, <a href={wa}>escríbenos por WhatsApp</a>.</p></noscript>
       <form class="form" data-request data-phone={clinic.phoneE164} hidden>

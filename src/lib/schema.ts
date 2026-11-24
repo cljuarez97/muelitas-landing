@@ -18,6 +18,7 @@ export function dentistSchema(url: string, image: string) {
           ...(visit.address.length > 0 && { streetAddress: visit.address.join(', ') }),
           addressCountry: 'GT',
         },
+        geo: { '@type': 'GeoCoordinates', ...visit.geo },
         ...(visit.mapsUrl && { hasMap: visit.mapsUrl }),
         availableService: treatments.map((t) => ({ '@type': 'MedicalProcedure', name: t.name })),
       },
