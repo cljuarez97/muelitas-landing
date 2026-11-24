@@ -1,4 +1,4 @@
-import { clinic, faq, treatments } from '../data/content';
+import { clinic, faq, treatments, visit } from '../data/content';
 
 /** Solo datos confirmados: sin dirección, horario ni credenciales hasta que la clínica los dé. */
 export function dentistSchema(url: string, image: string) {
@@ -13,7 +13,12 @@ export function dentistSchema(url: string, image: string) {
         image,
         telephone: clinic.phoneE164,
         email: clinic.email,
-        address: { '@type': 'PostalAddress', addressCountry: 'GT' },
+        address: {
+          '@type': 'PostalAddress',
+          ...(visit.address.length > 0 && { streetAddress: visit.address.join(', ') }),
+          addressCountry: 'GT',
+        },
+        ...(visit.mapsUrl && { hasMap: visit.mapsUrl }),
         availableService: treatments.map((t) => ({ '@type': 'MedicalProcedure', name: t.name })),
       },
       {

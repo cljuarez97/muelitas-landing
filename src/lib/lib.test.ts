@@ -29,7 +29,7 @@ describe('schema', () => {
   it('publica solo datos confirmados y no puede cerrar el script', () => {
     const json = toJsonLd(dentistSchema('https://x/', 'https://x/og.png'));
     expect(json).toContain('+50237245564');
-    expect(json).not.toContain('streetAddress');
+    expect(json).not.toContain('"streetAddress":""');
     expect(toJsonLd({ a: '</script>' })).not.toContain('</script>');
   });
 });
@@ -39,6 +39,6 @@ describe('contenido', () => {
     expect(clinic.title.length).toBeLessThanOrEqual(60);
     expect(clinic.description.length).toBeLessThanOrEqual(160);
     expect(new Set(treatments.map((t) => t.name)).size).toBe(treatments.length);
-    expect(new Set(nav.map((n) => n.id)).size).toBe(nav.length);
+    expect(new Set(nav.map((n) => n.path)).size).toBe(nav.length);
   });
 });

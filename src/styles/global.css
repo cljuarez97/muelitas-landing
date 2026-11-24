@@ -60,6 +60,8 @@ main:focus { outline: none; }
 .top-nav { display: none; align-items: center; gap: 2rem; font-weight: 600; }
 .top-nav a:not(.btn) { display: inline-flex; align-items: center; min-height: 2.75rem; text-decoration: none; }
 .top-nav a:not(.btn):hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.top-nav a[aria-current]:not(.btn) { text-decoration: underline; text-decoration-thickness: 2px; color: var(--coral); }
+.bottom-nav a[aria-current] { color: var(--coral); }
 .top-nav .btn { min-height: 2.875rem; }
 
 /* Portada */
@@ -88,6 +90,32 @@ main:focus { outline: none; }
 .seal text { fill: var(--petrol); font: 700 9.5px var(--body); }
 .seal-tooth { fill: var(--coral); }
 .hero-figure figcaption { margin-top: 1.75rem; text-align: center; font: 600 1.375rem/1.3 var(--display); color: var(--petrol); }
+
+/* Visítanos */
+.visit { padding-block: clamp(2.5rem, 5vw, 4.5rem) var(--section); }
+.visit-grid { display: grid; gap: 2.5rem; margin-top: 3rem; }
+.visit-card { display: grid; align-content: start; justify-items: start; padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: var(--radius); background: var(--mint); }
+.visit-card h2 { margin-bottom: 0.625rem; font: 700 1rem/1.3 var(--body); letter-spacing: 0; color: var(--coral); }
+.visit-card > * + h2 { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #8dbdb3; width: 100%; }
+.visit-big { font: 600 1.625rem/1.25 var(--display); letter-spacing: -0.015em; margin-bottom: 1.25rem; }
+.visit-big span { display: block; }
+.visit-hours { width: 100%; margin: 0; }
+.visit-hours div { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.5rem; }
+.visit-hours dt { font-weight: 700; }
+.visit-hours dd { margin: 0; text-align: right; }
+.visit-frame { position: relative; margin: 0 0.75rem 0.75rem 0; align-self: start; }
+.visit-frame::before { content: ''; position: absolute; inset: 0.75rem -0.75rem -0.75rem 0.75rem; border: 2px solid var(--petrol); border-radius: var(--radius); }
+.office-art { position: relative; width: 100%; height: auto; border-radius: var(--radius); }
+.tips { display: grid; gap: 1.25rem; margin-top: 2.5rem; }
+.tips li { padding: 1.75rem; border-radius: 1.25rem; background: var(--white); }
+.tips h3 { font: 700 1.375rem/1.15 var(--display); }
+.tips p { margin-top: 0.5rem; color: var(--muted); }
+.o-wall { fill: #165a66; } .o-floor { fill: var(--petrol); } .o-window { fill: var(--mint); } .o-white { fill: var(--white); }
+.o-dark { fill: var(--petrol-deep); } .o-mid, .o-mint { fill: var(--mint-strong); } .o-coral { fill: var(--coral-soft); } .o-light { fill: #fff3c9; }
+.o-shadow { fill: var(--petrol-deep); }
+.o-edge, .o-pane, .o-arm, .o-seam, .o-armrest, .o-tool, .o-plant { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.o-edge { stroke: var(--petrol-deep); stroke-width: 4; } .o-pane { stroke: #8dbdb3; stroke-width: 5; } .o-arm { stroke: var(--white); stroke-width: 9; }
+.o-seam { stroke: var(--petrol); stroke-width: 4; opacity: 0.45; } .o-armrest { stroke: var(--white); stroke-width: 18; } .o-tool { stroke: var(--coral-soft); stroke-width: 6; } .o-plant { stroke: var(--mint-strong); stroke-width: 4; fill: var(--mint-strong); }
 
 /* Dos columnas */
 .split { display: grid; gap: 2.5rem; }
@@ -188,6 +216,8 @@ summary:hover strong, .faq summary:hover { text-decoration: underline; text-unde
   .site-footer { padding-bottom: 3rem; }
   .hero::before { inset: 2.5rem 0 0 auto; width: 34%; height: auto; border-top-left-radius: 14rem; }
   .hero-grid { grid-template-columns: 7fr 5fr; gap: 3.5rem; }
+  .visit-grid { grid-template-columns: 5fr 7fr; gap: 3.5rem; }
+  .tips { grid-template-columns: repeat(3, 1fr); }
   .split { grid-template-columns: 5fr 7fr; gap: 4rem; }
   .steps-head { grid-template-columns: 5fr 7fr; gap: 4rem; align-items: end; }
   .steps { grid-template-columns: repeat(4, 1fr); margin-top: 3.5rem; }

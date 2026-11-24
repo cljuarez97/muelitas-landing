@@ -16,11 +16,37 @@ export const clinic = {
 };
 
 export const nav = [
-  { label: 'Inicio', id: 'inicio' },
-  { label: 'Tratamientos', id: 'tratamientos' },
-  { label: 'Preguntas', id: 'preguntas' },
-  { label: 'Solicitar cita', short: 'Cita', id: 'cita' },
+  { label: 'Inicio', path: '/#inicio' },
+  { label: 'Tratamientos', path: '/#tratamientos' },
+  { label: 'Preguntas', path: '/#preguntas' },
+  { label: 'Visítanos', path: '/visitanos/' },
+  { label: 'Solicitar cita', short: 'Cita', path: '/#cita' },
 ];
+
+/** Dirección, horario y mapa: al llenarlos, la página y los datos para Google se actualizan solos. */
+export const visit: {
+  intro: string;
+  address: string[];
+  addressPending: string;
+  mapsUrl: string;
+  hours: { days: string; time: string }[];
+  hoursPending: string;
+  askMessage: string;
+  tips: { title: string; text: string }[];
+} = {
+  intro: 'Queremos recibirte sin prisas. Agenda tu cita y confirma tu horario antes de venir.',
+  address: [],
+  addressPending: 'Te compartimos la ubicación exacta por WhatsApp',
+  mapsUrl: '',
+  hours: [],
+  hoursPending: 'Atendemos con cita previa. Escríbenos y te contamos qué horarios hay disponibles.',
+  askMessage: '¡Hola! ¿Me comparten la dirección y el horario de Dental Kaizen?',
+  tips: [
+    { title: 'Confirma tu cita', text: 'Revisa el día y la hora que acordamos. Si no puedes venir, avísanos por WhatsApp.' },
+    { title: 'Trae tu información', text: 'Ten a mano tus radiografías recientes y la lista de medicamentos que tomas.' },
+    { title: 'Cuéntanos todo', text: 'Dinos si tienes alergias, alguna enfermedad o un embarazo. Así te cuidamos mejor.' },
+  ],
+};
 
 export const treatments = [
   { name: 'Valoración dental', short: 'Empieza aquí y descubre qué necesita tu sonrisa.', text: 'Examinamos tus dientes y encías, resolvemos tus dudas y te mostramos qué atender primero. Sales con un plan claro para decidir con calma.' },

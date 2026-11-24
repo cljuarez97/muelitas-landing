@@ -13,4 +13,4 @@ Comandos: `pnpm dev`, `pnpm build`, `pnpm preview`, `pnpm check`, `pnpm test`. C
 
 ## Pendiente de la clínica
 
-Dirección, horario, número de colegiado, fotos reales, redes sociales, y revisión del texto de tratamientos y del aviso de privacidad.
+Dirección, horario y mapa (`visit` en `src/data/content.ts`), número de colegiado, fotos reales, redes sociales, y revisión del texto de tratamientos y del aviso de privacidad.

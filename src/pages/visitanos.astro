@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import OfficeArt from '../components/OfficeArt.astro';
+import WhatsApp from '../components/WhatsApp.astro';
+import { clinic, visit } from '../data/content';
+import { href, whatsappUrl } from '../lib/url';
+
+const ask = whatsappUrl(clinic.phoneE164, visit.askMessage);
+---
+<Base title="Visítanos · Dental Kaizen" description="Visita Dental Kaizen con cita previa en Guatemala. Pide la dirección y el horario por WhatsApp o llama al +502 3724 5564.">
+  <section class="visit">
+    <div class="wrap">
+      <div class="steps-head">
+        <h1>Visítanos</h1>
+        <p class="lead">{visit.intro}</p>
+      </div>
+      <div class="visit-grid">
+        <div class="visit-card">
+          <h2>Dirección</h2>
+          {visit.address.length > 0
+            ? <address class="visit-big">{visit.address.map((line) => <span>{line}</span>)}</address>
+            : <p class="visit-big">{visit.addressPending}</p>}
+          <a class="btn btn-primary" href={visit.mapsUrl || ask} target="_blank" rel="noopener">
+            {!visit.mapsUrl && <WhatsApp />}{visit.mapsUrl ? 'Cómo llegar' : 'Pedir la ubicación'}<span class="sr-only"> (se abre en otra pestaña)</span>
+          </a>
+          <h2>Horario</h2>
+          {visit.hours.length > 0
+            ? <dl class="visit-hours">{visit.hours.map((h) => <div><dt>{h.days}</dt><dd>{h.time}</dd></div>)}</dl>
+            : <p>{visit.hoursPending}</p>}
+          <h2>Contacto</h2>
+          <ul class="contact" role="list">
+            <li><a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a></li>
+            <li><a href={`mailto:${clinic.email}`}>{clinic.email}</a></li>
+          </ul>
+        </div>
+        <div class="visit-frame"><OfficeArt /></div>
+      </div>
+    </div>
+  </section>
+  <section class="section band-mint" aria-labelledby="v-title">
+    <div class="wrap">
+      <div class="steps-head">
+        <h2 id="v-title">Prepara <em>tu visita</em></h2>
+        <p class="lead">Tres detalles sencillos para aprovechar mejor tu consulta.</p>
+      </div>
+      <ul class="tips" role="list">{visit.tips.map((t) => <li><h3>{t.title}</h3><p>{t.text}</p></li>)}</ul>
+      <p class="steps-cta"><a class="btn btn-primary" href={href('/#cita')}>Solicitar mi cita</a></p>
+    </div>
+  </section>
+</Base>
