@@ -1,9 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import HeroArt from '../components/HeroArt.astro';
+import StepArt from '../components/StepArt.astro';
 import Tooth from '../components/Tooth.astro';
 import WhatsApp from '../components/WhatsApp.astro';
-import { clinic, faq, promises, steps, times, treatments } from '../data/content';
+import { clinic, faq, promises, steps, stepsIntro, times, treatments } from '../data/content';
 import { dentistSchema, toJsonLd } from '../lib/schema';
 import { href, whatsappUrl } from '../lib/url';
 
@@ -57,10 +58,20 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
 
   <section class="section band-mint" aria-labelledby="s-title">
     <div class="wrap">
-      <h2 id="s-title">Cómo es tu visita</h2>
+      <div class="steps-head">
+        <h2 id="s-title">Cómo es <em>tu visita</em></h2>
+        <p class="lead">{stepsIntro}</p>
+      </div>
       <ol class="steps" role="list">
-        {steps.map((s, i) => <li><span class="arch-num" aria-hidden="true">{i + 1}</span><h3>{s.title}</h3><p>{s.text}</p></li>)}
+        {steps.map((s, i) => (
+          <li class="step">
+            <div class="step-arch"><StepArt step={i} /></div>
+            <span class="step-num" aria-hidden="true">{i + 1}</span>
+            <div class="step-copy"><h3>{s.title}</h3><p>{s.text}</p></div>
+          </li>
+        ))}
       </ol>
+      <p class="steps-cta"><a class="btn btn-primary" href="#cita">Solicitar mi cita</a></p>
     </div>
   </section>
 

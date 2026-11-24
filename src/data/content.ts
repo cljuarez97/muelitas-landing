@@ -33,11 +33,13 @@ export const treatments = [
   { name: 'Blanqueamiento', short: 'Aclara el tono de los dientes naturales.', text: 'Primero revisamos que dientes y encías estén sanos. Puede dar sensibilidad temporal y no cambia el color de resinas ni coronas.' },
 ];
 
+export const stepsIntro = 'Cuatro pasos claros: sabes qué sigue antes de que empiece.';
+
 export const steps = [
-  { title: 'Te escuchamos', text: 'Nos cuentas qué sientes, qué te preocupa y qué esperas.' },
+  { title: 'Te escuchamos', text: 'Nos cuentas qué sientes, qué te preocupa y qué esperas de la consulta.' },
   { title: 'Revisamos', text: 'Vemos cada pieza y la anotamos en tu odontograma.' },
   { title: 'Te explicamos', text: 'Conoces las opciones y el presupuesto antes de empezar.' },
-  { title: 'Damos seguimiento', text: 'Revisamos cómo vas y cuándo conviene volver.' },
+  { title: 'Damos seguimiento', text: 'Revisamos cómo vas y acordamos cuándo conviene volver.' },
 ];
 
 export const promises = [
