@@ -72,6 +72,7 @@ main:focus { outline: none; }
 .lead { margin-top: 1.5rem; max-width: 36rem; font-size: clamp(1.125rem, 1rem + 0.5vw, 1.3125rem); }
 .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
 .hero-note { margin-top: 1.25rem; color: var(--muted); }
+.hero-note a { white-space: nowrap; }
 .hero-figure { position: relative; width: min(100%, 25rem); margin-inline: auto; }
 .arch { overflow: hidden; border-radius: 999px 999px var(--radius) var(--radius); outline: 2px solid var(--petrol); outline-offset: 0.625rem; }
 .hero-art { width: 100%; height: auto; }
