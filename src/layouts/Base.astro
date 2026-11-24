@@ -55,7 +55,7 @@ const csp = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 's
       <div class="wrap footer-grid">
         <div>
           <p class="brand brand-light"><Tooth /><span><strong>{clinic.brand}</strong><small>{clinic.brandSub}</small></span></p>
-          <p>Atención con cita previa, Guatemala.</p>
+          <p>{clinic.tagline}.<br />Atención con cita previa en Guatemala.</p>
         </div>
         <address>
           <a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a>
@@ -66,7 +66,7 @@ const csp = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 's
           <a href={href('/privacidad/')}>Aviso de privacidad</a>
         </nav>
       </div>
-      <p class="wrap legal">© {new Date().getFullYear()} {clinic.name}. La información de este sitio es general y no sustituye una consulta.</p>
+      <p class="wrap legal">© {new Date().getFullYear()} {clinic.name}. La información de este sitio es orientativa y no sustituye una consulta.</p>
       <p class="wrap credit"><img src={href('/bichitech-logo.webp')} alt="" width="40" height="40" loading="lazy" />Sitio desarrollado por Bichitech</p>
     </footer>
     <a class="fab" href={wa} target="_blank" rel="noopener" aria-label="Escribir por WhatsApp (se abre en otra pestaña)"><WhatsApp /></a>

@@ -16,7 +16,7 @@ describe('url', () => {
 
 describe('solicitud', () => {
   it('omite lo vacío', () => {
-    expect(requestMessage({ name: ' Ana ', treatment: '', time: '', note: ' ' })).toBe('Hola, soy Ana y quisiera solicitar una cita.');
+    expect(requestMessage({ name: ' Ana ', treatment: '', time: '', note: ' ' })).toBe('¡Hola! Soy Ana y me gustaría solicitar una cita.');
   });
   it('limpia saltos y recorta', () => {
     const text = requestMessage({ name: 'Ana\nMotivo: otro', treatment: 'Resinas', time: 'Por la tarde', note: 'x'.repeat(900) });

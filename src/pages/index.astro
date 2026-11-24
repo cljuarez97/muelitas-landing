@@ -17,10 +17,10 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
     <div class="wrap hero-grid">
       <div>
         <p class="eyebrow">Clínica dentista · Guatemala</p>
-        <h1>Tu sonrisa, <em>muela por muela</em></h1>
-        <p class="lead">En Dental Kaizen, con el Dr. Muelitas Axpuaca, revisamos cada diente, te explicamos qué necesita y decides con un presupuesto claro.</p>
+        <h1>Sonríe con <em>confianza</em></h1>
+        <p class="lead">En Dental Kaizen, el Dr. Muelitas Axpuaca cuida cada detalle de tu sonrisa. Conoce tus opciones, recibe un presupuesto claro y decide con tranquilidad.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#cita">Solicitar mi cita</a>
+          <a class="btn btn-primary" href="#cita">Quiero mi cita</a>
           <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener"><WhatsApp />Escribir por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
         </div>
         <p class="hero-note">Atención con cita previa · <a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a></p>
@@ -30,7 +30,7 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
         <svg class="seal" viewBox="0 0 120 120" aria-hidden="true">
           <defs><path id="seal-path" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1 -88 0" /></defs>
           <circle cx="60" cy="60" r="59" class="seal-bg" />
-          <text><textPath href="#seal-path" textLength="270">SONRISAS BIEN CUIDADAS · DENTAL KAIZEN ·</textPath></text>
+          <text><textPath href="#seal-path" textLength="270">SONRÍE CON CONFIANZA · DENTAL KAIZEN ·</textPath></text>
           <g transform="translate(40 40) scale(.62)"><path class="seal-tooth" d="M19 6C10 6 5 13 6 22c.700 6 4 10 5.500 16C13 45 13 58 20 58c6 0 4-18 12-18s6 18 12 18c7 0 7-13 8.500-20C54 32 57.300 28 58 22c1-9-4-16-13-16-6 0-8 3-13 3s-7-3-13-3Z" /></g>
         </svg>
         <figcaption>{clinic.tagline}</figcaption>
@@ -41,9 +41,9 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
   <section class="section" id="tratamientos" aria-labelledby="t-title">
     <div class="wrap split">
       <div class="split-head">
-        <h2 id="t-title">Tratamientos</h2>
-        <p>Toca un tratamiento para saber de qué se trata. Cuál te conviene se decide en la valoración.</p>
-        <a class="btn btn-ghost" href="#cita">Pedir una valoración</a>
+        <h2 id="t-title">Todo lo que tu <em>sonrisa</em> necesita</h2>
+        <p>Explora nuestros tratamientos y descubre cómo podemos ayudarte. En tu valoración encontramos juntos el más adecuado.</p>
+        <a class="btn btn-ghost" href="#cita">Agendar mi valoración</a>
       </div>
       <ol class="treatments" role="list">
         {treatments.map((t, i) => (
@@ -71,7 +71,7 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
           </li>
         ))}
       </ol>
-      <p class="steps-cta"><a class="btn btn-primary" href="#cita">Solicitar mi cita</a></p>
+      <p class="steps-cta"><a class="btn btn-primary" href="#cita">Dar el primer paso</a></p>
     </div>
   </section>
 
@@ -79,7 +79,7 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
     <div class="wrap split">
       <div class="split-head">
         <h2 id="p-title">Cada diente tiene <em>su historia</em></h2>
-        <p>Por eso la anotamos. En tu próxima cita sabemos qué se hizo, en qué pieza y qué falta.</p>
+        <p>Y nosotros la conocemos. En cada visita sabemos qué se hizo, en qué pieza y cuál es el siguiente paso.</p>
         <div class="mini-chart" aria-hidden="true">{Array.from({ length: 16 }, (_, i) => <Tooth class={i === 4 || i === 11 ? 'is-marked' : i === 7 ? 'is-done' : ''} />)}</div>
       </div>
       <ul class="promises" role="list">{promises.map((p) => <li><h3>{p.title}</h3><p>{p.text}</p></li>)}</ul>
@@ -88,7 +88,7 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
 
   <section class="section" id="preguntas" aria-labelledby="f-title">
     <div class="wrap split">
-      <div class="split-head"><h2 id="f-title">Preguntas frecuentes</h2></div>
+      <div class="split-head"><h2 id="f-title">Resolvemos <em>tus dudas</em></h2><p>Lo que más nos preguntan antes de la primera visita.</p></div>
       <div class="faq">{faq.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}</div>
     </div>
   </section>
@@ -96,22 +96,22 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
   <section class="section band-mint" id="cita" aria-labelledby="c-title">
     <div class="wrap split">
       <div class="split-head">
-        <h2 id="c-title">Solicita tu cita</h2>
-        <p>Al enviar se abre WhatsApp con tu mensaje listo. Este sitio no guarda lo que escribes.</p>
+        <h2 id="c-title">Tu nueva sonrisa <em>te espera</em></h2>
+        <p>Cuéntanos qué necesitas y prepararemos tu mensaje de WhatsApp. Solo tendrás que enviarlo. Este sitio no guarda tus datos.</p>
         <ul class="contact" role="list">
           <li><a href={wa} target="_blank" rel="noopener"><WhatsApp />WhatsApp {clinic.phone}<span class="sr-only"> (se abre en otra pestaña)</span></a></li>
           <li><a href={`tel:${clinic.phoneE164}`}>Llamar al {clinic.phone}</a></li>
           <li><a href={`mailto:${clinic.email}`}>{clinic.email}</a></li>
         </ul>
-        <p>¿Cómo llegar y en qué horario? Te lo confirmamos al responder.</p>
+        <p>Al responderte confirmamos la dirección y el horario disponible.</p>
       </div>
       <noscript><p>Para solicitar tu cita, <a href={wa}>escríbenos por WhatsApp</a>.</p></noscript>
       <form class="form" data-request data-phone={clinic.phoneE164} hidden>
-        <label>Nombre <input name="name" required maxlength="80" autocomplete="name" /></label>
-        <label>Motivo <select name="treatment"><option value="">Aún no lo sé</option>{treatments.map((t) => <option>{t.name}</option>)}</select></label>
-        <label>Horario que te queda mejor <select name="time">{times.map((t) => <option>{t}</option>)}</select></label>
-        <label>Comentario (opcional) <textarea name="note" rows="3" maxlength="300"></textarea></label>
-        <button class="btn btn-primary" type="submit"><WhatsApp />Enviar por WhatsApp</button>
+        <label>Tu nombre <input name="name" required maxlength="80" autocomplete="name" /></label>
+        <label>¿En qué podemos ayudarte? <select name="treatment"><option value="">Quiero una orientación</option>{treatments.map((t) => <option>{t.name}</option>)}</select></label>
+        <label>¿Qué horario prefieres? <select name="time">{times.map((t) => <option>{t}</option>)}</select></label>
+        <label>¿Algo más que debamos saber? (opcional) <textarea name="note" rows="3" maxlength="300"></textarea></label>
+        <button class="btn btn-primary" type="submit"><WhatsApp />Solicitar mi cita por WhatsApp</button>
         <p class="form-status" role="status"></p>
       </form>
     </div>
@@ -137,7 +137,7 @@ const jsonLd = toJsonLd(dentistSchema(root, new URL(href('/og.png'), Astro.site)
       const url = whatsappUrl(form.dataset.phone ?? '', requestMessage({ name: value('name'), treatment: value('treatment'), time: value('time'), note: value('note') }));
       window.open(url, '_blank', 'noopener');
       const status = form.querySelector('.form-status');
-      if (status) status.textContent = 'Abrimos WhatsApp en otra pestaña: envía el mensaje para completar tu solicitud.';
+      if (status) status.textContent = '¡Todo listo! Abrimos WhatsApp en otra pestaña. Envía el mensaje para completar tu solicitud.';
     });
   }
 </script>

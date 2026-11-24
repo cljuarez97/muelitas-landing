@@ -5,14 +5,14 @@ export const clinic = {
   name: 'Dental Kaizen',
   brand: 'Dental Kaizen',
   brandSub: 'Clínica dentista',
-  tagline: 'Sonrisas bien cuidadas',
+  tagline: 'Tu mejor sonrisa empieza aquí',
   title: 'Clínica dentista en Guatemala · Dental Kaizen',
   description:
-    'Dental Kaizen, clínica dentista en Guatemala con el Dr. Muelitas Axpuaca: limpieza, resinas, endodoncia, exodoncia y coronas. Pide tu cita por WhatsApp.',
+    'Cuida tu sonrisa en Dental Kaizen, clínica dentista en Guatemala con el Dr. Muelitas Axpuaca. Presupuesto claro y citas por WhatsApp.',
   phone: '+502 3724 5564',
   phoneE164: '+50237245564',
   email: 'rominchote@gmail.com',
-  message: 'Hola, quisiera solicitar una cita en Dental Kaizen.',
+  message: '¡Hola! Me gustaría solicitar una cita en Dental Kaizen.',
 };
 
 export const nav = [
@@ -23,38 +23,38 @@ export const nav = [
 ];
 
 export const treatments = [
-  { name: 'Valoración dental', short: 'El primer paso: revisar tu boca y acordar un plan.', text: 'Revisamos dientes, encías y lo que te preocupa. Con eso te explicamos qué necesita atención, qué puede esperar y qué opciones tienes.' },
-  { name: 'Limpieza dental', short: 'Retira la placa y el sarro que el cepillo no alcanza.', text: 'Ayuda a prevenir caries y problemas de encías. La frecuencia depende de tu boca y la acordamos en la consulta.' },
-  { name: 'Resinas', short: 'Reparan piezas con caries o desgaste.', text: 'Se retira el tejido dañado y se reconstruye la pieza con un material del color del diente. Cuanto antes se trata una caries, más diente se conserva.' },
-  { name: 'Endodoncia', short: 'Trata el interior del diente para intentar conservarlo.', text: 'Se indica cuando la caries o un golpe afectan el nervio. Se limpia y se sella el interior, y después la pieza se restaura.' },
-  { name: 'Exodoncia y terceros molares', short: 'Extracciones cuando la pieza ya no puede conservarse.', text: 'También valoramos las muelas del juicio. Antes te explicamos el procedimiento, los riesgos y los cuidados posteriores.' },
-  { name: 'Coronas e implantes', short: 'Devuelven forma y función a piezas dañadas o ausentes.', text: 'La corona cubre un diente debilitado; el implante reemplaza la raíz de uno que falta. No son para todos los casos: lo definimos en la valoración.' },
-  { name: 'Ortodoncia', short: 'Alinea los dientes y mejora la mordida.', text: 'Requiere estudio previo y controles periódicos. El tiempo varía según cada caso.' },
-  { name: 'Blanqueamiento', short: 'Aclara el tono de los dientes naturales.', text: 'Primero revisamos que dientes y encías estén sanos. Puede dar sensibilidad temporal y no cambia el color de resinas ni coronas.' },
+  { name: 'Valoración dental', short: 'Empieza aquí y descubre qué necesita tu sonrisa.', text: 'Examinamos tus dientes y encías, resolvemos tus dudas y te mostramos qué atender primero. Sales con un plan claro para decidir con calma.' },
+  { name: 'Limpieza dental', short: 'Recupera la sensación de una boca fresca y limpia.', text: 'Retiramos la placa y el sarro que el cepillo no alcanza. Es una de las mejores formas de prevenir caries y problemas de encías.' },
+  { name: 'Resinas', short: 'Repara tus dientes con un acabado del mismo tono.', text: 'Eliminamos la caries y reconstruimos la pieza con un material del color de tu diente. Mientras antes la tratemos, más diente natural conservas.' },
+  { name: 'Endodoncia', short: 'Una oportunidad para conservar tu diente.', text: 'Cuando la caries o un golpe llegan al nervio, limpiamos y sellamos el interior de la pieza. Después la restauramos para que vuelva a cumplir su función.' },
+  { name: 'Exodoncia y muelas del juicio', short: 'Extracciones con cuidado y sin sorpresas.', text: 'Si una pieza ya no puede conservarse, te explicamos el procedimiento, sus riesgos y los cuidados posteriores. También valoramos tus muelas del juicio.' },
+  { name: 'Coronas e implantes', short: 'Vuelve a morder y sonreír con confianza.', text: 'La corona protege un diente debilitado y el implante ocupa el lugar de la raíz que falta. En tu valoración definimos cuál es la mejor opción para ti.' },
+  { name: 'Ortodoncia', short: 'Alinea tu sonrisa y mejora tu mordida.', text: 'Estudiamos tu caso antes de empezar y seguimos tu avance en controles periódicos. El tiempo de tratamiento depende de cada persona.' },
+  { name: 'Blanqueamiento', short: 'Aclara tus dientes y luce una sonrisa más luminosa.', text: 'Antes comprobamos que tus dientes y encías estén sanos. Puede causar sensibilidad temporal y no cambia el color de resinas ni coronas.' },
 ];
 
-export const stepsIntro = 'Un proceso ordenado y transparente: en cada etapa sabes qué sigue y por qué.';
+export const stepsIntro = 'Desde el primer saludo hasta tu próximo control, siempre sabes qué sigue y por qué.';
 
 export const steps = [
-  { title: 'Escucha', text: 'Conocemos tu historia, tus molestias y lo que esperas de tu sonrisa.' },
+  { title: 'Escucha', text: 'Queremos conocer tu historia, tus molestias y la sonrisa que esperas.' },
   { title: 'Diagnóstico', text: 'Examinamos cada pieza y registramos su estado en tu odontograma digital.' },
-  { title: 'Plan a tu medida', text: 'Recibes opciones explicadas con claridad y tu presupuesto antes de iniciar.' },
-  { title: 'Seguimiento', text: 'Acompañamos tu evolución y planificamos contigo los próximos controles.' },
+  { title: 'Plan a tu medida', text: 'Conoces tus opciones y tu presupuesto antes de iniciar cualquier tratamiento.' },
+  { title: 'Seguimiento', text: 'Cuidamos tu evolución y planificamos contigo los próximos controles.' },
 ];
 
 export const promises = [
-  { title: 'Un registro por cada diente', text: 'Llevamos un odontograma digital: qué tiene cada pieza, qué se le hizo y cuándo.' },
-  { title: 'Presupuesto por tratamiento', text: 'Ves el precio de cada cosa antes de decidir, sin mezclarlo todo en un solo total.' },
-  { title: 'Primero lo necesario', text: 'Te decimos qué urge y qué puede esperar, para que avances a tu ritmo.' },
-  { title: 'Explicado en palabras sencillas', text: 'Puedes preguntar todo lo que quieras antes de sentarte en el sillón.' },
+  { title: 'Tu boca, pieza por pieza', text: 'Tu odontograma digital guarda qué tiene cada diente, qué se le hizo y cuándo.' },
+  { title: 'Precios claros desde el inicio', text: 'Ves cuánto cuesta cada tratamiento antes de tomar una decisión.' },
+  { title: 'Primero lo que importa', text: 'Te decimos qué es urgente y qué puede esperar, para que avances a tu ritmo.' },
+  { title: 'Explicaciones que sí se entienden', text: 'Hablamos sin tecnicismos y respondemos todas tus preguntas antes de empezar.' },
 ];
 
 export const faq = [
-  { q: '¿Cómo solicito una cita?', a: 'Llena el formulario o escríbenos por WhatsApp al +502 3724 5564. La cita queda lista cuando la clínica te confirma día y hora.' },
-  { q: '¿Cuánto cuesta un tratamiento?', a: 'Depende de lo que necesite cada pieza. Después de la valoración recibes un presupuesto con el precio de cada tratamiento.' },
-  { q: '¿Duele ir al dentista?', a: 'La sensibilidad cambia según la persona y el tratamiento, y hay opciones de anestesia local. Si te da miedo, dínoslo: lo tomamos en cuenta.' },
-  { q: '¿Cada cuánto debo hacerme una revisión?', a: 'Depende del estado de tus dientes y encías. En tu consulta acordamos cada cuánto conviene que vuelvas.' },
-  { q: 'Tengo dolor fuerte o hinchazón, ¿qué hago?', a: 'Escríbenos o llámanos cuanto antes. Si tienes dificultad para respirar o tragar, fiebre o hinchazón que avanza, acude de inmediato a una emergencia.' },
+  { q: '¿Cómo solicito mi cita?', a: 'Es muy fácil. Llena el formulario o escríbenos por WhatsApp al +502 3724 5564. Tu cita queda lista cuando te confirmemos el día y la hora.' },
+  { q: '¿Cuánto cuesta un tratamiento?', a: 'Cada sonrisa es distinta. Después de tu valoración recibes un presupuesto con el precio de cada tratamiento, para que decidas con tranquilidad.' },
+  { q: '¿Me va a doler?', a: 'Cada persona lo vive de manera diferente y existen opciones de anestesia local. Si sientes nervios, cuéntanos. Iremos paso a paso y a tu ritmo.' },
+  { q: '¿Cada cuánto debo visitar al dentista?', a: 'Depende del estado de tus dientes y encías. En tu consulta acordamos la frecuencia ideal para ti.' },
+  { q: 'Tengo dolor fuerte o hinchazón. ¿Qué hago?', a: 'Llámanos o escríbenos cuanto antes. Si tienes dificultad para respirar o tragar, fiebre o una hinchazón que avanza, acude de inmediato a una emergencia.' },
 ];
 
 export const times = ['Por la mañana', 'Por la tarde', 'Cualquier horario'];
