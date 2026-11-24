@@ -5,9 +5,11 @@ import WhatsApp from '../components/WhatsApp.astro';
 import { clinic, visit } from '../data/content';
 import { href, whatsappUrl } from '../lib/url';
 
+const wa = whatsappUrl(clinic.phoneE164, clinic.message);
+const mapSrc = `https://www.google.com/maps?q=${visit.geo.latitude},${visit.geo.longitude}&z=17&hl=es&output=embed`;
 const ask = whatsappUrl(clinic.phoneE164, visit.askMessage);
 ---
-<Base title="Visítanos · Dental Kaizen" description="Dental Kaizen te espera en 24 calle 3-95, La Comunidad, zona 10 de Mixco. De lunes a sábado con cita previa. Tel. +502 3724 5564.">
+<Base title="Visítanos · Dental Kaizen" description="Dental Kaizen te espera en 24 calle 3-95, La Comunidad, zona 10 de Mixco. De lunes a sábado con cita previa. Tel. +502 3724 5564." map>
   <section class="visit">
     <div class="wrap">
       <div class="steps-head">
@@ -29,12 +31,18 @@ const ask = whatsappUrl(clinic.phoneE164, visit.askMessage);
             : <p>{visit.hoursPending}</p>}
           {visit.hours.length > 0 && <p>{visit.hoursNote}</p>}
           <h2>Contacto</h2>
+          <a class="btn btn-ghost" href={wa} target="_blank" rel="noopener"><WhatsApp />Escribir por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
           <ul class="contact" role="list">
             <li><a href={`tel:${clinic.phoneE164}`}>{clinic.phone}</a></li>
             <li><a href={`mailto:${clinic.email}`}>{clinic.email}</a></li>
           </ul>
         </div>
         <div class="visit-frame"><OfficeArt /></div>
+      </div>
+      <div class="map">
+        <h2>Encuéntranos <em>en el mapa</em></h2>
+        <div class="map-box"><iframe src={mapSrc} title="Mapa de Google con la ubicación de Dental Kaizen" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <p>¿No carga el mapa? <a href={visit.mapsUrl} target="_blank" rel="noopener">Ábrelo en Google Maps<span class="sr-only"> (se abre en otra pestaña)</span></a></p>
       </div>
     </div>
   </section>

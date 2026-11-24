@@ -118,6 +118,11 @@ main:focus { outline: none; }
 .o-edge { stroke: var(--petrol-deep); stroke-width: 4; } .o-pane { stroke: #8dbdb3; stroke-width: 5; } .o-arm { stroke: var(--white); stroke-width: 9; }
 .o-seam { stroke: var(--petrol); stroke-width: 4; opacity: 0.45; } .o-armrest { stroke: var(--white); stroke-width: 18; } .o-tool { stroke: var(--coral-soft); stroke-width: 6; } .o-plant { stroke: var(--mint-strong); stroke-width: 4; fill: var(--mint-strong); }
 
+.visit-card .contact { margin-top: 0.75rem; }
+.map { margin-top: clamp(3.5rem, 7vw, 5.5rem); }
+.map-box { margin-block: 1.75rem 0.75rem; overflow: hidden; border-radius: var(--radius); background: var(--mint); border: 2px solid var(--petrol); }
+.map iframe { display: block; width: 100%; height: clamp(20rem, 50vh, 28rem); border: 0; }
+
 /* Dos columnas */
 .split { display: grid; gap: 2.5rem; }
 .split-head > * + * { margin-top: 1.25rem; }
